@@ -17,6 +17,10 @@ public class HelloController {
 	public String sayBye() throws UnknownHostException {
 		return String.format("Bye from %s:%s", InetAddress.getLocalHost().getHostAddress(), env.getProperty("local.server.port"));
 	}
+	@GetMapping("/eating")
+	public String eating() throws UnknownHostException {
+		return String.format("eating %s:%s", InetAddress.getLocalHost().getHostAddress(), env.getProperty("local.server.port"));
+	}
 	//localhost:8081/hello
 	@GetMapping("/hello")
 	public String sayHello() throws UnknownHostException {
