@@ -1,11 +1,11 @@
 pipeline {
     agent none
-    //     environment {
-    //     ENV_DOCKER = credentials('dockerhub')
-    //     SONAR_TOKEN = credentials('sonar')
-    //     DOCKERIMAGE = "full-stack-app-demo"
-    //     EKS_CLUSTER_NAME = "demo-cluster"
-    // }
+        environment {
+        //ENV_DOCKER = credentials('dockerhub')
+        SONAR_TOKEN = credentials('sonar')
+        //DOCKERIMAGE = "full-stack-app-demo"
+        //EKS_CLUSTER_NAME = "demo-cluster"
+    }
     stages {
         stage('Build') {
             agent {
