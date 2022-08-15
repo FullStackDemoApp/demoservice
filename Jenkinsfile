@@ -17,6 +17,15 @@ pipeline {
             steps {
                 sh 'mvn -B -DskipTests clean package' 
             }
-        } 
+        }
+        stage('SonarQube') {
+            agent {
+                docker { image 'sonarsource/sonar-scanner-cli:latest' }
+            }
+            steps {
+                echo 'Sonaqube step'
+                sh 'sonar-scanner'
+            }
+        }
     }
 }
